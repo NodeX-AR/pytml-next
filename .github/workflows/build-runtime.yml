@@ -1,0 +1,45 @@
+name: Build Python Runtime
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Emscripten
+        uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.60
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libssl-dev zlib1g-dev libffi-dev
+
+      - name: Show repo layout
+        run: |
+          pwd
+          ls -la
+          ls -la tools/ || true
+          cat tools/build-runtime.sh || true
+
+      - name: Run build script
+        run: bash tools/build-runtime.sh
+
+      - name: Upload runtime artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-runtime
+          path: |
+            runtime/python.wasm
+            runtime/python.mjs
+            runtime/**
+          if-no-files-found: warn
