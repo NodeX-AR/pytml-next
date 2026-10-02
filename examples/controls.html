@@ -1,0 +1,11 @@
+<!doctype html><script src="../pytml.js"></script>
+<btn1>Click me</btn1><input1 placeholder="Type here"><range1 min="0" max="100" value="50"><joystick1></joystick1><pre id="out"></pre>
+<py1>
+def click(e): out.text = 'clicked'
+def changed(e): out.text = f"value={e['value']}"
+def moved(e): out.text = f"x={e['joystick_x']:.2f} y={e['joystick_y']:.2f}"
+btn1.on('click', click)
+input1.on('input', changed)
+range1.on('input', changed)
+joystick1.on('pytmljoystick', moved)
+</py1>

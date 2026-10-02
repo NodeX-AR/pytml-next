@@ -1,0 +1,15 @@
+<!doctype html><script src="../pytml.js"></script>
+<button id="next">Next</button><p id="out"></p>
+<py1>
+count = 0
+</py1>
+<py2>
+label = 'Pytml'
+</py2>
+<py1>
+def next_count():
+    global count
+    count += 1
+    out.text = f'{label}: {count}'
+next.on('click', next_count)
+</py1>

@@ -1,0 +1,9 @@
+<!doctype html><script src="../pytml.js"></script>
+<input id="a" type="number" value="10"><input id="b" type="number" value="5"><button id="add">Add</button><button id="sub">Subtract</button><h2 id="answer"></h2>
+<py1>
+def calculate(op):
+    x = int(a.value); y = int(b.value)
+    answer.text = str(x + y if op == '+' else x - y)
+add.on('click', lambda: calculate('+'))
+sub.on('click', lambda: calculate('-'))
+</py1>

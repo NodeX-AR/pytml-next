@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pytml — Python + HTML for beginners</title>
+<meta name="description" content="Pytml lets beginners build browser apps with normal Python and normal HTML, with multiple py programs, rich UI controls, touch input, joysticks, and a Pytml-owned CPython WebAssembly runtime.">
+<link rel="canonical" href="https://pytml.js.org/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#e8eefc;background:#0b1020}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:auto;padding:64px 24px}.hero{padding:64px 0}.tag{display:inline-block;padding:6px 10px;border:1px solid #304064;border-radius:999px;color:#9db7ff}.hero h1{font-size:clamp(44px,8vw,84px);line-height:.95;margin:18px 0}.hero p{font-size:20px;max-width:760px;color:#aeb9d0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.card{padding:24px;border:1px solid #24304b;border-radius:18px;background:#11182b}.code{background:#070b15;border:1px solid #26314b;border-radius:14px;padding:18px;overflow:auto}pre{margin:0;white-space:pre-wrap;color:#dce6ff}a{color:#9db7ff}.pill{font-family:ui-monospace,monospace;color:#c7d5ff}
+</style></head>
+<body><main>
+<section class="hero"><span class="tag">Pytml 3 · new engine</span><h1>Python + HTML.<br>Keep both simple.</h1><p>Pytml is a beginner-first browser programming layer. Write normal Python, write normal HTML, and connect them without learning a second application language.</p></section>
+<section class="card"><h2>One page, multiple Python programs</h2><div class="code"><pre>&lt;input id="name" placeholder="Your name"&gt;
+&lt;button id="hello"&gt;Hello&lt;/button&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
+
+&lt;py1&gt;
+def greet():
+    result.text = "Hello " + name.value
+
+hello.on("click", greet)
+&lt;/py1&gt;</pre></div></section>
+<br><section class="grid">
+<div class="card"><h3>py1, py2, py3…</h3><p>Identifiers, not filenames. Repeat a program tag to continue the same Python state.</p></div>
+<div class="card"><h3>Rich browser input</h3><p>Buttons, text bars, sliders, forms, scrolling, keyboard, mouse, touch, pointer and drag/drop events.</p></div>
+<div class="card"><h3>Touch & games</h3><p>Built-in joystick controls expose position, magnitude and angle for browser games and interactive demos.</p></div>
+<div class="card"><h3>Python packages</h3><p>Keep the familiar <span class="pill">micropip</span> workflow. Native packages are built as Pytml WebAssembly wheels.</p></div>
+<div class="card"><h3>No Pyodide dependency</h3><p>Pytml's runtime is designed around CPython compiled directly to WebAssembly with Emscripten.</p></div>
+<div class="card"><h3>HTML stays HTML</h3><p>Use ordinary DOM elements and CSS. Pytml adds conveniences; it does not replace the web platform.</p></div>
+</section>
+<br><section class="card"><h2>Controls</h2><p><span class="pill">&lt;btn1&gt;</span> <span class="pill">&lt;input1&gt;</span> <span class="pill">&lt;textarea1&gt;</span> <span class="pill">&lt;range1&gt;</span> <span class="pill">&lt;checkbox1&gt;</span> <span class="pill">&lt;select1&gt;</span> <span class="pill">&lt;joystick1&gt;</span> <span class="pill">&lt;canvas1&gt;</span> and media/file/date/time controls are supported by the compiler layer.</p></section>
+<br><p><a href="https://github.com/NodeX-AR/Pytml">GitHub</a> · <a href="./demo.html">Try the demo</a> · <a href="../README.md">Documentation</a></p>
+</main></body></html>
